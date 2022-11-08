@@ -1,6 +1,6 @@
 # Auth0-python
 
-Auth0-python is a python wrapper for the Auth0 Management API with automatic token refreshing
+Auth0-python is a custom python wrapper for the Auth0 Management API with automatic token refreshing
 
 ## Installation
 
