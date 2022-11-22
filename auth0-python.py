@@ -113,7 +113,7 @@ class Auth0ManagmentAPI:
     def get_passsword_reset_url_by_id(self, user_id, invite_url=False):
         request_body = {
             'user_id' : user_id,
-            'result_url' : 'https://digital.methodrecycling.com/dashboard/'
+            'result_url' : '<YOUR-HOME-PAGE>'
         }
 
         resp = self.auth0.tickets.create_pswd_change(request_body,)
