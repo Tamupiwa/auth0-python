@@ -1,18 +1,13 @@
 from auth0.v3.authentication import GetToken
 from auth0.v3.management import Auth0
 from auth0.v3.exceptions import Auth0Error
-import pprint
 from api.python_common.repeat_timer import RepeatTimer
-
-
-pp = pprint.PrettyPrinter(indent=4)
-
 
 API_KEY_UPDATE_TIME = 79200 #22 hours
 
 class Auth0ManagmentAPI:
 
-    def __init__(self, non_interactive_client_id, non_interactive_client_secret, domain="dev-xz-ifzda.au.auth0.com"):
+    def __init__(self, non_interactive_client_id, non_interactive_client_secret, domain):
         self.client_id = non_interactive_client_id
         self.client_secret = non_interactive_client_secret
         self.domain = domain
@@ -139,3 +134,8 @@ class Auth0ManagmentAPI:
 
         template = self.auth0.email_templates.get(template_name)
         return template.get('body') 
+
+    #returns all clients/applications
+    def get_client_application(self, client_id):
+        client = self.auth0.clients.get(client_id)
+        return client
